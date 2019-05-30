@@ -18,7 +18,15 @@ restService.use(bodyParser.json({type: 'application/json'}));
 app.intent('Default Welcome Intent', (conv) => {
 	//rest api to get data from strapi => response you add in conv.ask(....)
 	var Request = require("request");
-    Request.get("http://localhost:1337/responses", (error, response, body) => {
+
+Request.post({
+    "headers": { "content-type": "application/json" },
+    "url": "localhost:1337/responses",
+    "body": JSON.stringify({
+        "id": "5",
+        "intent_name": "Default Welcome Intent"
+    })
+}, (error, response, body) => {
     if(error) {
         return console.dir(error);
     }
