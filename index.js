@@ -16,6 +16,14 @@ restService.use(bodyParser.json({type: 'application/json'}));
 
 // Welcome Intent
 app.intent('Default Welcome Intent', (conv) => {
+	//rest api to get data from strapi => response you add in conv.ask(....)
+	var Request = require("request");
+    Request.get("http://localhost:1337/responses", (error, response, body) => {
+    if(error) {
+        return console.dir(error);
+    }
+    console.dir(JSON.parse(body));
+});
 	conv.ask("Greetings! this is my static msg from webhook.");
 	conv.add(new Suggestions('Sign in'));    
 });
