@@ -32,7 +32,7 @@ app.intent('Default Welcome Intent', (conv) => {
 	var data= JSON.parse(body);
 });
 	//conv.ask("Greetings! Message from static webhook");
-	  conv.ask(data);
+	  conv.ask('data');
 	conv.add(new Suggestions('Sign in'));    
 });
 
