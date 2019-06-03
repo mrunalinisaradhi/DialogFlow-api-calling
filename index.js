@@ -29,10 +29,10 @@ app.intent('Default Welcome Intent', (conv) => {
      return console.dir(error);
     }
     console.dir(JSON.parse(body));
-	//var data= JSON.parse(body);
+	var data= JSON.parse(body);
 });
 	//conv.ask("Greetings! Message from static webhook");
-	conv.ask('Response.post(data)');
+	conv.ask('Request.post(data)');
 	conv.add(new Suggestions('Sign in'));    
 });
 
