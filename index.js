@@ -18,7 +18,7 @@ restService.use(bodyParser.json({type: 'application/json'}));
 app.intent('Default Welcome Intent', (conv) => {
 	//rest api to get data from strapi => response you add in conv.ask(....)
 	var Request = require("request");
-    Request.post({
+    Request.get({
     "headers": { "content-type": "application/json" },
     "url": "https://cms-dialogflow.herokuapp.com/Responses/14",
     "body": JSON.stringify({
