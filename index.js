@@ -32,7 +32,7 @@ app.intent('Default Welcome Intent', (conv) => {
 	//var data= JSON.parse(body);
 });
 	//conv.ask("Greetings! Message from static webhook");
-	//conv.ask('Response.post(data)');
+	conv.ask('Response.post(data)');
 	conv.add(new Suggestions('Sign in'));    
 });
 
@@ -41,4 +41,5 @@ restService.post('/v2/webhook', app) ;
 restService.listen(process.env.PORT || 8000, function() {
   console.log("Server up and listening");
 });
+
 
