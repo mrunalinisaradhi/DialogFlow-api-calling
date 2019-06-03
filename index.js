@@ -20,9 +20,9 @@ app.intent('Default Welcome Intent', (conv) => {
 	var Request = require("request");
     Request.get({
     "headers": { "content-type": "application/json" },
-    "url": "localhost:1337/responses",
+    "url": "https://cms-dialogflow.herokuapp.com/Responses/14",
     "body": JSON.stringify({
-       "intent_name": "Default Welcome Intent"
+       "response":"Hi! How can I help you?"
     })
     }, (error, response, body) => {
     if(error) {
